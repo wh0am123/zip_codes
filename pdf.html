@@ -5,16 +5,47 @@
 	<title>Pdf</title>
 	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<script>
-		// Documentation Link
+
+function crear_pdf() {
+	// Documentation Link
 		//https://rawgit.com/MrRio/jsPDF/master/docs/jsPDF.html
 		// Default export is a4 paper, portrait, using milimeters for units
 var doc = new jsPDF()
-
-doc.text('Hello world!', 10, 10)
+$nombre = document.getElementById('nombre').value;
+$apellido = document.getElementById('apellido').value;
+$tel = document.getElementById('tel').value;
+doc.text('Factura nro° 1234', 10, 10)
+doc.text('Nombre: '+$nombre,10, 20)
+doc.text('Apellido: '+$apellido,10, 30)
+doc.text('Teléfono: '+$tel,10, 40)
 doc.save('a4.pdf')
+
+}
+		
+function cargar() {
+
+	document.getElementsByTagName('button')[0].addEventListener('click',crear_pdf,false);
+}
+window.addEventListener('load',cargar,false);
 	</script>
 </head>
 <body>
-	
+	<h1>Crear factura</h1>
+	<br>
+	<fieldset>
+		<label for="nombre">Nombre</label>
+		<input type="text" name="nombre" id="nombre">
+	</fieldset>
+	<br>
+	<fieldset>
+		<label for="nombre">Apellido</label>
+		<input type="text" name="apellido" id="apellido">
+	</fieldset>
+	<br>
+	<fieldset>
+		<label for="nombre">Teléfono</label>
+		<input type="tel" name="tel" id="tel">
+	</fieldset>
+	<button>Crear PDF</button>
 </body>
 </html>
