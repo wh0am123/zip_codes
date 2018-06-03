@@ -13,9 +13,9 @@
   <label for="postcode2">Código Postal #2</label>
   <input type="text" id="etc" ng-model="cp2" name="postcode2">
   <br>
-  <button type="submit">Procesar</button>
+  <button type="button" name="button" onclick="location.href='../';">Volver</button>
   </form>
-  <?php 
+  <?php
   include '../vendor/autoload.php';
   use GuzzleHttp\Client;
 
@@ -38,7 +38,7 @@
         <li>Estado: '.$response_cp1_object->estado.'</li>';
         foreach ($response_cp1_object->colonias as $key) {
           echo '<li>Colonias: '.$key.'</li>
-          </ul>';  
+          </ul>';
         }
         echo '<ul>
         <li>Código Postal: '.$response_cp2_object->codigo_postal.'</li>
@@ -46,9 +46,9 @@
         <li>Estado: '.$response_cp2_object->estado.'</li>';
         foreach ($response_cp2_object->colonias as $key) {
           echo '<li>Colonias: '.$key.'</li>
-        </ul>';    
+        </ul>';
         }
-    
+
  ?>
 </body>
 </html>

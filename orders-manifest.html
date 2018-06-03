@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manifiesto</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+  <section class="container" style="text-align: center;margin-top: 4%;">
+    <div>
+    <h1 style="font-size: 1.7em;">Manifiesto</h1>
+   </div>
+   <br>
+   <div style="display: flex;justify-content: center;flex-direction: row;">
+     <div class="col-sm-4" style="margin-top: 3%;">
+       <select name="filtro" class="form-control" placeholder="Filtrar por:">
+         <option default>Driver</option>
+         <option>Helper</option>
+         <option>Etc</option>
+         <option>Etc</option>
+       </select>
+     </div>
+     <div class="col-sm-4">
+       <label for="fecha_inicio">Fecha Inicio</label>
+       <input type="date" name="fecha_inicio" min="2017-01-01" max="2018-12-31" class="form-control">
+     </div>
+     <div class="col-sm-4">
+       <label for="fecha_final">Fecha Final</label>
+       <input type="date" name="fecha_final" min="2017-01-01" max="2018-12-31"  class="form-control">
+     </div>
+   </div>
+  </section>
+  <br>
+  <main class="container">
+    <table class="table table-light">
+      <thead>
+        <th>ID Manifiesto</th>
+        <th>Conductor</th>
+        <th>Número de Órdenes</th>
+        <th>Revisar</th>
+        <th>Agregar</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+        </tr>
+        <tr>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+        </tr>
+        <tr>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+        </tr>
+        <tr>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+          <td>Etc</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer class="footer container">
+    <div>
+      <button type="button" class="btn">Cargar más</button>
+    </div>
+  </footer>
+</body>
+</html>
