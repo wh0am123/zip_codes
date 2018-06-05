@@ -14,14 +14,18 @@ function crear_pdf() {
 var doc = new jsPDF()
 $driver = document.getElementById('driver').value;
 $apellido = document.getElementById('fecha').value;
+$numero = document.getElementById('numero').value;
+$pickup = document.getElementById('pickup').value;
+$delivery = document.getElementById('delivery').value;
+$galons = document.getElementById('galons').value;
+$miles = document.getElementById('miles').value;
+
 doc.text('ESTIMACIÓN DE MILLAS Y GALONES POR RUTA', 40, 50)
 doc.text('Driver: '+$driver,20, 70)
 doc.text('Fecha: '+$apellido,140, 70)
-var columns = ["Id", "Nombre", "Email", "Pais"];
+var columns = ["Nro", "Pickup", "Delivery", "Gls"];
 var data = [
-[1, "Hola", "hola@gmail.com", "Mexico"],
-[2, "Hello", "hello@gmail.com", "Estados Unidos"],
-[3, "Otro", "otro@gmail.com", "Otro"]
+[1, $pickup, $delivery, $galons]
 ];
 
 doc.autoTable(columns,data,
@@ -48,7 +52,27 @@ window.addEventListener('load',cargar,false);
 	<br>
 	<fieldset>
 		<label for="nombre">Fecha</label>
-		<input type="text" name="fecha" id="fecha">
+		<input type="date" name="fecha" id="fecha" min="2017-01-01" max="2018-12-31">
+	</fieldset>
+	<fieldset>
+		<label for="nombre">Número</label>
+		<input type="number" name="numero" id="numero" min="1" max="10000000">
+	</fieldset>
+	<fieldset>
+		<label for="nombre">Delivery</label>
+		<input type="number" name="delivery" id="delivery" min="1" max="10000000">
+	</fieldset>
+	<fieldset>
+		<label for="nombre">Pickup</label>
+		<input type="number" name="pickup" id="pickup" min="1" max="10000000">
+	</fieldset>
+	<fieldset>
+		<label for="nombre">Gls</label>
+		<input type="number" name="galons" id="galons" min="1" max="10000000">
+	</fieldset>
+	<fieldset>
+		<label for="nombre">Miles</label>
+		<input type="number" name="miles" id="miles" min="1" max="10000000">
 	</fieldset>
 	<br>
 	<button>Crear PDF</button>
