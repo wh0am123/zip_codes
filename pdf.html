@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Pdf</title>
 	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.js" charset="utf-8"></script>
 	<script>
 
 function crear_pdf() {
@@ -11,13 +12,21 @@ function crear_pdf() {
 		//https://rawgit.com/MrRio/jsPDF/master/docs/jsPDF.html
 		// Default export is a4 paper, portrait, using milimeters for units
 var doc = new jsPDF()
-$nombre = document.getElementById('nombre').value;
-$apellido = document.getElementById('apellido').value;
-$tel = document.getElementById('tel').value;
-doc.text('Factura nro° 1234', 10, 10)
-doc.text('Nombre: '+$nombre,10, 20)
-doc.text('Apellido: '+$apellido,10, 30)
-doc.text('Teléfono: '+$tel,10, 40)
+$driver = document.getElementById('driver').value;
+$apellido = document.getElementById('fecha').value;
+doc.text('ESTIMACIÓN DE MILLAS Y GALONES POR RUTA', 40, 50)
+doc.text('Driver: '+$driver,20, 70)
+doc.text('Fecha: '+$apellido,140, 70)
+var columns = ["Id", "Nombre", "Email", "Pais"];
+var data = [
+[1, "Hola", "hola@gmail.com", "Mexico"],
+[2, "Hello", "hello@gmail.com", "Estados Unidos"],
+[3, "Otro", "otro@gmail.com", "Otro"]
+];
+
+doc.autoTable(columns,data,
+{ margin:{ top: 100 }}
+);
 doc.save('a4.pdf')
 
 }
@@ -33,19 +42,15 @@ window.addEventListener('load',cargar,false);
 	<h1>Crear factura</h1>
 	<br>
 	<fieldset>
-		<label for="nombre">Nombre</label>
-		<input type="text" name="nombre" id="nombre">
+		<label for="nombre">Driver</label>
+		<input type="text" name="driver" id="driver">
 	</fieldset>
 	<br>
 	<fieldset>
-		<label for="nombre">Apellido</label>
-		<input type="text" name="apellido" id="apellido">
+		<label for="nombre">Fecha</label>
+		<input type="text" name="fecha" id="fecha">
 	</fieldset>
 	<br>
-	<fieldset>
-		<label for="nombre">Teléfono</label>
-		<input type="tel" name="tel" id="tel">
-	</fieldset>
 	<button>Crear PDF</button>
 </body>
 </html>
