@@ -25,9 +25,7 @@
 </div>
 
 	</form>
-</body>
-</html>
-
+  <div class="container" style="display: flex;justify-content: center;">
   <?php
   include '../vendor/autoload.php';
   use GuzzleHttp\Client;
@@ -79,5 +77,6 @@
       }*/
 
  ?>
+ </div>
 </body>
 </html>
